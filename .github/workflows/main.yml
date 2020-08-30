@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - uses: boredom101/gui-screenshot-action@master
+      - uses: boredom101/terminal-snapshot-action@master
         with:
           rows: 10
           cols: 10
