@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  
+  build:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: boredom101/gui-screenshot-action@master
+        with:
+          rows: 10
+          cols: 10
+          path: 'image.png'
+          sleep: 10
+          command: 'ls --color=auto /'
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Screenshot
+          path: 'image.png'
